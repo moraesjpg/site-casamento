@@ -1,7 +1,7 @@
 body {
   body {
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Allura', sans-serif;
   color: #333;
   background-color: #fff9df;
 }
@@ -40,7 +40,7 @@ body {
 }
 
 .hero-text h1 {
-  font-family: 'Allura', cursive;
+  font-family: 'Lato', cursive;
   font-size: 4.5rem;
   font-weight: normal;
   letter-spacing: 2px;
