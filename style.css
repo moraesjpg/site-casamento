@@ -40,8 +40,10 @@ body {
 }
 
 .hero-text h1 {
-   font-family: 'Great Vibes', cursive;
-  font-size: 5rem;
+  font-family: 'Allura', cursive;
+  font-size: 4.5rem;
+  font-weight: normal;
+  letter-spacing: 2px;
 }
 
 section {
