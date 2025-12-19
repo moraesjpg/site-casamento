@@ -1,9 +1,20 @@
-<section class="countdown">
-  <h2>Contagem regressiva</h2>
-  <div id="timer">
-    <div><span id="days">0</span><small>Dias</small></div>
-    <div><span id="hours">0</span><small>Horas</small></div>
-    <div><span id="minutes">0</span><small>Minutos</small></div>
-    <div><span id="seconds">0</span><small>Segundos</small></div>
-  </div>
-</section>
+const weddingDate = new Date("2026-09-20T16:30:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  if (distance < 0) return;
+
+  document.getElementById("days").innerText =
+    Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  document.getElementById("hours").innerText =
+    Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+  document.getElementById("minutes").innerText =
+    Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  document.getElementById("seconds").innerText =
+    Math.floor((distance % (1000 * 60)) / 1000);
+}, 1000);
