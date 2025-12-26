@@ -1,9 +1,11 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* BASE */
 body {
   font-family: 'Lato', sans-serif;
   background: #fafafa;
@@ -11,24 +13,47 @@ body {
   text-align: center;
 }
 
-/* TOPO */
-.topo {
+/* =========================
+   TOPO FLORAL
+========================= */
+
+.topo-floral {
   position: relative;
-  padding-top: 40px;
+  height: 280px;
+  max-width: 1100px;
+  margin: 40px auto 0;
 }
 
-.topo img {
-  max-width: 100%;
+.floral {
+  position: absolute;
+  top: 0;
+  width: 380px;
+  max-width: 45%;
+}
+
+.floral.esquerda {
+  left: 0;
+}
+
+.floral.direita {
+  right: 0;
 }
 
 .monograma {
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: 'Playfair Display', serif;
   font-size: 32px;
-  letter-spacing: 4px;
-  margin-top: -40px;
+  letter-spacing: 6px;
+  color: #5a3a3a;
 }
 
-/* CONVITE */
+/* =========================
+   CONVITE
+========================= */
+
 .convite {
   max-width: 600px;
   margin: 0 auto;
@@ -58,11 +83,14 @@ h1 {
   margin-bottom: 50px;
 }
 
-/* CONTAGEM */
+/* =========================
+   CONTAGEM REGRESSIVA
+========================= */
+
 .countdown .timer {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 24px;
   margin-bottom: 50px;
 }
 
@@ -76,7 +104,10 @@ h1 {
   font-weight: 300;
 }
 
-/* MAPA */
+/* =========================
+   MAPA
+========================= */
+
 .mapa iframe {
   width: 100%;
   height: 250px;
@@ -84,19 +115,25 @@ h1 {
   margin-bottom: 40px;
 }
 
-/* PRESENTES */
+/* =========================
+   PRESENTES
+========================= */
+
 .presentes p {
   margin-bottom: 15px;
 }
 
 .presentes .links a {
-  margin: 0 10px;
+  margin: 0 12px;
   text-decoration: none;
   color: #a14b6a;
   font-weight: 400;
 }
 
-/* RSVP */
+/* =========================
+   RSVP
+========================= */
+
 .rsvp h2 {
   font-family: 'Playfair Display', serif;
   margin-bottom: 20px;
@@ -105,24 +142,52 @@ h1 {
 .rsvp form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
-.rsvp input, .rsvp button {
+.rsvp input,
+.rsvp button {
   padding: 10px;
   border: 1px solid #ddd;
+  font-family: 'Lato', sans-serif;
 }
 
 .rsvp button {
   background: #a14b6a;
-  color: white;
+  color: #fff;
   border: none;
   cursor: pointer;
 }
 
-/* RODAPÉ */
+/* =========================
+   RODAPÉ
+========================= */
+
 footer {
   font-size: 12px;
   margin: 40px 0;
   color: #888;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 768px) {
+  .topo-floral {
+    height: 200px;
+  }
+
+  .floral {
+    width: 260px;
+  }
+
+  .monograma {
+    top: 120px;
+    font-size: 26px;
+  }
+
+  h1 {
+    font-size: 52px;
+  }
 }
