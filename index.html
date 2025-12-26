@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Júlia & Ruan</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
   <!-- Fontes -->
@@ -14,12 +13,11 @@
 
 <body>
 
-  <!-- TOPO FLORAL -->
-  <header class="topo-floral">
-    <img src="imagens/Arranjo-sup-e.png" class="floral esquerda" alt="Arranjo floral esquerdo">
-    <img src="imagens/Arranjo-sup-d.png" class="floral direita" alt="Arranjo floral direito">
-    <div class="monograma">J | R</div>
-  </header>
+  <!-- ARRANJO FLORAL SUPERIOR -->
+  <div class="topo">
+    <img src="img/floral-esquerda.png" class="floral floral-esquerda" alt="">
+    <img src="img/floral-direita.png" class="floral floral-direita" alt="">
+  </div>
 
   <!-- CONTEÚDO CENTRAL -->
   <main class="convite">
@@ -43,8 +41,9 @@
     <!-- VERSÍCULO -->
     <section class="versiculo">
       <p>
-        ²⁰ Para que todos vejam, e saibam, e considerem, e juntamente entendam
-        que a mão do Senhor fez isto, e o Santo de Israel o criou.
+        “Para que todos vejam, e saibam, e considerem,<br>
+        e juntamente entendam que a mão do Senhor fez isto,<br>
+        e o Santo de Israel o criou.”
       </p>
       <span>Isaías 41:20</span>
     </section>
@@ -52,22 +51,10 @@
     <!-- CONTAGEM REGRESSIVA -->
     <section class="countdown">
       <div class="timer">
-        <div>
-          <span id="days">0</span>
-          <small>Dias</small>
-        </div>
-        <div>
-          <span id="hours">0</span>
-          <small>Horas</small>
-        </div>
-        <div>
-          <span id="minutes">0</span>
-          <small>Min</small>
-        </div>
-        <div>
-          <span id="seconds">0</span>
-          <small>Seg</small>
-        </div>
+        <div><span id="days">0</span><small>Dias</small></div>
+        <div><span id="hours">0</span><small>Horas</small></div>
+        <div><span id="minutes">0</span><small>Min</small></div>
+        <div><span id="seconds">0</span><small>Seg</small></div>
       </div>
     </section>
 
@@ -75,8 +62,7 @@
     <section class="mapa">
       <iframe
         src="https://www.google.com/maps?q=Catedral%20Nossa%20Senhora%20da%20Saúde%20Betim&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
+        loading="lazy">
       </iframe>
     </section>
 
@@ -84,8 +70,8 @@
     <section class="presentes">
       <p>Seu carinho já é nosso maior presente</p>
       <div class="links">
-        <a href="https://www.amazon.com.br" target="_blank" rel="noopener">Amazon</a>
-        <a href="https://www.magazineluiza.com.br" target="_blank" rel="noopener">Magazine Luiza</a>
+        <a href="https://www.amazon.com.br" target="_blank">Amazon</a>
+        <a href="https://www.magazineluiza.com.br" target="_blank">Magazine Luiza</a>
       </div>
     </section>
 
@@ -101,13 +87,10 @@
 
   </main>
 
-  <!-- RODAPÉ -->
   <footer>
     Com amor, Júlia e Ruan
   </footer>
 
-  <!-- JS -->
   <script src="script.js" defer></script>
-
 </body>
 </html>
