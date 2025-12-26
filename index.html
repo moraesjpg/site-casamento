@@ -3,153 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nosso Casamento</title>
+  <title>Júlia & Ruan</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Playfair+Display:wght@400;500&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- ARRANJOS SUPERIORES -->
-  <header class="topo-floral">
-    <img src="img/Arranjo-sup-e.png" class="floral esquerda" alt="Arranjo floral superior esquerdo">
-    <img src="img/Arranjo-sup-d.png" class="floral direita" alt="Arranjo floral superior direito">
+  <!-- ARRANJO FLORAL SUPERIOR -->
+  <header class="topo">
+    <img src="img/arranjo-topo.png" alt="Arranjo floral">
+    <div class="monograma">J | R</div>
   </header>
 
-  <!-- MENU -->
-  <header class="menu">
-    <nav>
-      <a href="#inicio">Início</a>
-      <a href="#sobre">Sobre nós</a>
-      <a href="#cerimonia">Cerimônia</a>
-      <a href="#festa">Festa</a>
-      <a href="#presentes">Presentes</a>
-      <a href="#rsvp">Confirmar presença</a>
-    </nav>
-  </header>
+  <!-- CONTEÚDO CENTRAL -->
+  <main class="convite">
 
-  <!-- CAPA -->
-  <section class="hero" id="inicio" style="background-image: url('imagens/capa.jpg');">
-    <div class="hero-text">
-      <h1>Júlia &amp; Ruan</h1>
-      <span>23 de Maio de 2026 • 19h</span>
-    </div>
-  </section>
+    <h1>Júlia &amp; Ruan</h1>
 
-  <!-- FRASE PRINCIPAL -->
-  <section class="intro">
-    <h2>Vamos nos casar!</h2>
-
-    <div class="versiculo">
-      <p class="texto">
-        Para que todos vejam, e saibam, e considerem, e juntamente entendam
-        que a mão do Senhor fez isto, e o Santo de Israel o criou.
-      </p>
-      <span class="referencia">Isaías 41:20</span>
-    </div>
-  </section>
-
-  <!-- IMAGEM DE DESTAQUE -->
-  <section class="image-highlight">
-    <img src="imagens/aliancas.jpg" alt="Alianças do casal">
-  </section>
-
-  <!-- SOBRE NÓS -->
-  <section class="about" id="sobre">
-    <h2>Sobre nós</h2>
-    <p>
-      Aqui você pode contar a história do casal, como se conheceram,
-      curiosidades ou uma mensagem especial.
+    <p class="subtitulo">
+      Juntamente com seus pais,<br>
+      convidam para o seu casamento
     </p>
-  </section>
 
-  <!-- CERIMÔNIA E FESTA -->
-  <section class="events" id="cerimonia">
-    <div class="event-box">
-      <h3>Cerimônia</h3>
-      <p>Catedral Nossa Senhora da Saúde</p>
-      <p>19h00</p>
-      <a href="#mapa">Ver no mapa</a>
-    </div>
+    <p class="data">
+      23 de Maio de 2026 • 19h
+    </p>
 
-    <div class="event-box" id="festa">
-      <h3>Festa</h3>
-      <p>Espaço Recanto Santa Rita</p>
-      <p>Após a cerimônia</p>
-      <a href="#mapa">Ver no mapa</a>
-    </div>
-  </section>
+    <p class="local">
+      Catedral Nossa Senhora da Saúde<br>
+      Betim • MG
+    </p>
 
-  <!-- CONTAGEM REGRESSIVA -->
-  <section class="countdown">
-    <h2>Contagem regressiva</h2>
-
-    <div id="timer">
-      <div class="time-box">
-        <span id="days">0</span>
-        <small>Dias</small>
+    <!-- CONTAGEM REGRESSIVA -->
+    <section class="countdown">
+      <div class="timer">
+        <div><span id="days">0</span><small>Dias</small></div>
+        <div><span id="hours">0</span><small>Horas</small></div>
+        <div><span id="minutes">0</span><small>Min</small></div>
+        <div><span id="seconds">0</span><small>Seg</small></div>
       </div>
+    </section>
 
-      <div class="time-box">
-        <span id="hours">0</span>
-        <small>Horas</small>
+    <!-- MAPA -->
+    <section class="mapa">
+      <iframe
+        src="https://www.google.com/maps?q=Catedral%20Nossa%20Senhora%20da%20Saúde%20Betim&output=embed"
+        loading="lazy">
+      </iframe>
+    </section>
+
+    <!-- PRESENTES -->
+    <section class="presentes">
+      <p>Seu carinho já é nosso maior presente</p>
+      <div class="links">
+        <a href="https://www.amazon.com.br" target="_blank">Amazon</a>
+        <a href="https://www.magazineluiza.com.br" target="_blank">Magazine Luiza</a>
       </div>
+    </section>
 
-      <div class="time-box">
-        <span id="minutes">0</span>
-        <small>Minutos</small>
-      </div>
+    <!-- RSVP -->
+    <section class="rsvp">
+      <h2>Confirme sua presença</h2>
+      <form onsubmit="enviarRSVP(event)">
+        <input type="text" placeholder="Seu nome" required>
+        <input type="number" placeholder="Quantidade de convidados" min="1" required>
+        <button type="submit">Confirmar</button>
+      </form>
+    </section>
 
-      <div class="time-box">
-        <span id="seconds">0</span>
-        <small>Segundos</small>
-      </div>
-    </div>
-  </section>
+  </main>
 
-  <!-- MAPA -->
-  <section class="map" id="mapa">
-    <h2>Como chegar</h2>
-    <iframe
-      src="https://www.google.com/maps?q=São%20Paulo&output=embed"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </section>
-
-  <!-- PRESENTES -->
-  <section class="gifts" id="presentes">
-    <h2>Lista de presentes</h2>
-    <p>Seu carinho já é nosso maior presente 💖</p>
-
-    <div class="gift-links">
-      <a href="https://www.amazon.com.br" target="_blank" rel="noopener">Amazon</a>
-      <a href="https://www.magazineluiza.com.br" target="_blank" rel="noopener">Magazine Luiza</a>
-    </div>
-  </section>
-
-  <!-- RSVP -->
-  <section class="rsvp" id="rsvp">
-    <h2>Confirme sua presença</h2>
-
-    <form onsubmit="enviarRSVP(event)">
-      <input type="text" id="nome" placeholder="Seu nome" required>
-      <input type="number" id="qtd" placeholder="Quantidade de convidados" min="1" required>
-      <button type="submit">Confirmar presença</button>
-    </form>
-  </section>
-
-  <!-- RODAPÉ -->
   <footer>
-    <p>Com amor, Júlia e Ruan</p>
+    Com amor, Júlia e Ruan
   </footer>
 
-  <!-- JS -->
   <script src="script.js" defer></script>
-
 </body>
 </html>
