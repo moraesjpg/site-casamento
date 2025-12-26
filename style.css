@@ -13,181 +13,135 @@ body {
   text-align: center;
 }
 
-/* =========================
-   TOPO FLORAL
-========================= */
-
-.topo-floral {
+/* TOPO */
+.topo {
   position: relative;
-  height: 280px;
-  max-width: 1100px;
-  margin: 40px auto 0;
+  width: 100%;
+  min-height: 320px;
+  padding-top: 60px;
+  overflow: hidden;
 }
 
+/* ARRANJOS FLORAIS */
 .floral {
   position: absolute;
   top: 0;
-  width: 380px;
-  max-width: 45%;
+  width: 260px;       /* tamanho visual padrão */
+  height: auto;
+  max-width: 40vw;
+  z-index: 1;
 }
 
-.floral.esquerda {
+/* Esquerda */
+.floral-esquerda {
   left: 0;
+  transform: scale(0.95); /* ajuste fino visual */
 }
 
-.floral.direita {
+/* Direita */
+.floral-direita {
   right: 0;
+  transform: scale(1);
 }
 
-.monograma {
-  position: absolute;
-  top: 160px;
-  left: 50%;
-  transform: translateX(-50%);
+/* INICIAIS */
+.iniciais {
   font-family: 'Playfair Display', serif;
-  font-size: 32px;
   letter-spacing: 6px;
-  color: #5a3a3a;
+  font-size: 22px;
+  margin-bottom: 30px;
+  z-index: 2;
+  position: relative;
 }
 
-/* =========================
-   CONVITE
-========================= */
-
-.convite {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 60px 20px;
-}
-
-h1 {
-  font-family: 'Allura', cursive;
-  font-size: 64px;
+/* NOMES */
+.nomes {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
   margin-bottom: 20px;
+  z-index: 2;
+  position: relative;
 }
 
-.subtitulo {
+/* TEXTO */
+.texto {
   font-size: 16px;
   line-height: 1.6;
-  margin-bottom: 30px;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  z-index: 2;
+  position: relative;
 }
 
+/* DATA E LOCAL */
 .data {
   font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 20px;
+  margin: 25px 0 10px;
 }
 
 .local {
-  font-size: 14px;
-  margin-bottom: 50px;
-}
-
-/* =========================
-   CONTAGEM REGRESSIVA
-========================= */
-
-.countdown .timer {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-bottom: 50px;
-}
-
-.timer div {
-  font-size: 14px;
-}
-
-.timer span {
-  display: block;
-  font-size: 28px;
-  font-weight: 300;
-}
-
-/* =========================
-   MAPA
-========================= */
-
-.mapa iframe {
-  width: 100%;
-  height: 250px;
-  border: none;
+  font-size: 15px;
   margin-bottom: 40px;
 }
 
-/* =========================
-   PRESENTES
-========================= */
-
-.presentes p {
-  margin-bottom: 15px;
-}
-
-.presentes .links a {
-  margin: 0 12px;
-  text-decoration: none;
-  color: #a14b6a;
-  font-weight: 400;
-}
-
-/* =========================
-   RSVP
-========================= */
-
-.rsvp h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 20px;
-}
-
-.rsvp form {
+/* CONTAGEM REGRESSIVA */
+.contagem {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
 }
 
-.rsvp input,
-.rsvp button {
-  padding: 10px;
-  border: 1px solid #ddd;
-  font-family: 'Lato', sans-serif;
+.contagem div {
+  text-align: center;
 }
 
-.rsvp button {
-  background: #a14b6a;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+.contagem span {
+  display: block;
+  font-size: 28px;
+  font-family: 'Playfair Display', serif;
 }
 
-/* =========================
-   RODAPÉ
-========================= */
-
-footer {
+.contagem small {
   font-size: 12px;
-  margin: 40px 0;
-  color: #888;
+  letter-spacing: 1px;
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
-
+/* RESPONSIVO */
 @media (max-width: 768px) {
-  .topo-floral {
-    height: 200px;
+  .topo {
+    min-height: 260px;
+    padding-top: 40px;
   }
 
   .floral {
-    width: 260px;
+    width: 180px;
   }
 
-  .monograma {
-    top: 120px;
-    font-size: 26px;
+  .nomes {
+    font-size: 36px;
   }
 
-  h1 {
-    font-size: 52px;
+  .texto {
+    font-size: 15px;
+    padding: 0 20px;
+  }
+
+  .contagem {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floral {
+    width: 150px;
+  }
+
+  .iniciais {
+    font-size: 18px;
+  }
+
+  .nomes {
+    font-size: 30px;
   }
 }
