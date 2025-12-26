@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nosso Casamento</title>
 
   <!-- CSS -->
@@ -34,7 +35,7 @@
   <!-- CAPA -->
   <section class="hero" id="inicio" style="background-image: url('imagens/capa.jpg');">
     <div class="hero-text">
-      <h1>Júlia & Ruan</h1>
+      <h1>Júlia &amp; Ruan</h1>
       <span>23 de Maio de 2026 • 19h</span>
     </div>
   </section>
@@ -54,7 +55,7 @@
 
   <!-- IMAGEM DE DESTAQUE -->
   <section class="image-highlight">
-    <img src="imagens/aliancas.jpg" alt="Alianças">
+    <img src="imagens/aliancas.jpg" alt="Alianças do casal">
   </section>
 
   <!-- SOBRE NÓS -->
@@ -88,19 +89,22 @@
     <h2>Contagem regressiva</h2>
 
     <div id="timer">
-      <div>
+      <div class="time-box">
         <span id="days">0</span>
         <small>Dias</small>
       </div>
-      <div>
+
+      <div class="time-box">
         <span id="hours">0</span>
         <small>Horas</small>
       </div>
-      <div>
+
+      <div class="time-box">
         <span id="minutes">0</span>
         <small>Minutos</small>
       </div>
-      <div>
+
+      <div class="time-box">
         <span id="seconds">0</span>
         <small>Segundos</small>
       </div>
@@ -112,7 +116,8 @@
     <h2>Como chegar</h2>
     <iframe
       src="https://www.google.com/maps?q=São%20Paulo&output=embed"
-      loading="lazy">
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </section>
 
@@ -122,8 +127,8 @@
     <p>Seu carinho já é nosso maior presente 💖</p>
 
     <div class="gift-links">
-      <a href="https://www.amazon.com.br" target="_blank">Amazon</a>
-      <a href="https://www.magazineluiza.com.br" target="_blank">Magazine Luiza</a>
+      <a href="https://www.amazon.com.br" target="_blank" rel="noopener">Amazon</a>
+      <a href="https://www.magazineluiza.com.br" target="_blank" rel="noopener">Magazine Luiza</a>
     </div>
   </section>
 
@@ -133,7 +138,7 @@
 
     <form onsubmit="enviarRSVP(event)">
       <input type="text" id="nome" placeholder="Seu nome" required>
-      <input type="number" id="qtd" placeholder="Quantidade de convidados" required>
+      <input type="number" id="qtd" placeholder="Quantidade de convidados" min="1" required>
       <button type="submit">Confirmar presença</button>
     </form>
   </section>
@@ -144,7 +149,7 @@
   </footer>
 
   <!-- JS -->
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 
 </body>
 </html>
