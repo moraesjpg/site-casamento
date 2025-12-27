@@ -156,6 +156,14 @@ h1 {
 /* =========================
    RSVP
 ========================= */
+
+.flor-rsvp {
+  display: block;
+  margin: 0 auto 20px;
+  width: 120px;       /* ajuste se quiser maior ou menor */
+  max-width: 100%;
+}
+
 .rsvp h2 {
   font-family: 'Playfair Display', serif;
   margin-bottom: 20px;
