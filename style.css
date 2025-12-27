@@ -12,21 +12,39 @@ body {
 }
 
 /* TOPO */
-.topo {
+.topo-floral {
   position: relative;
-  padding-top: 40px;
+  height: 280px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.topo img {
-  max-width: 100%;
+.floral {
+  position: absolute;
+  top: 0;
+  width: 380px;
+  max-width: 45%;
+}
+
+.floral.esquerda {
+  left: 0;
+}
+
+.floral.direita {
+  right: 0;
 }
 
 .monograma {
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: 'Playfair Display', serif;
   font-size: 32px;
-  letter-spacing: 4px;
-  margin-top: -40px;
+  letter-spacing: 6px;
+  color: #5a3a3a;
 }
+
 
 /* CONVITE */
 .convite {
