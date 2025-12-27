@@ -159,9 +159,9 @@ h1 {
 
 .flor-rsvp {
   display: block;
-  margin: 0 auto 20px;
-  width: 120px;       /* ajuste se quiser maior ou menor */
-  max-width: 100%;
+  margin: 0 auto 2px;
+  width: 12px;       /* ajuste se quiser maior ou menor */
+  max-width: 10%;
 }
 
 .rsvp h2 {
