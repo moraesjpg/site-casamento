@@ -78,7 +78,6 @@ h1 {
 
 .data {
   font-size: 18px;
-  font-weight: 400;
   margin-bottom: 20px;
 }
 
@@ -105,7 +104,6 @@ h1 {
   display: block;
   margin-top: 8px;
   text-align: right;
-  font-style: normal;
   font-size: 13px;
 }
 
@@ -135,13 +133,17 @@ h1 {
 .mapa iframe {
   width: 100%;
   height: 250px;
-  border: none;
+  border: 0;
   margin-bottom: 40px;
 }
 
 /* =========================
    PRESENTES
 ========================= */
+.presentes {
+  margin-bottom: 30px;
+}
+
 .presentes p {
   margin-bottom: 15px;
 }
@@ -150,18 +152,16 @@ h1 {
   margin: 0 12px;
   text-decoration: none;
   color: #a14b6a;
-  font-weight: 400;
 }
 
 /* =========================
    RSVP
 ========================= */
-
 .flor-rsvp {
   display: block;
-  margin: 0 auto 2px;
-  width: 12px;       /* ajuste se quiser maior ou menor */
-  max-width: 10%;
+  margin: 30px auto 20px;
+  width: 120px;
+  max-width: 100%;
 }
 
 .rsvp h2 {
@@ -219,7 +219,6 @@ footer {
     font-size: 52px;
   }
 
-  /* Permite quebrar o subtítulo no mobile */
   .subtitulo {
     white-space: normal;
   }
