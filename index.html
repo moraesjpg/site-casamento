@@ -17,25 +17,15 @@
 <body>
   <!-- ARRANJO FLORAL SUPERIOR -->
   <header class="topo-floral">
-    <img
-      src="imagens/Arranjo-sup-e.png"
-      alt="Arranjo floral esquerdo"
-      class="floral esquerda"
-    />
-    <img
-      src="imagens/Arranjo-sup-d.png"
-      alt="Arranjo floral direito"
-      class="floral direita"
-    />
+    <img src="imagens/Arranjo-sup-e.png" alt="Arranjo floral esquerdo" class="floral esquerda" />
+    <img src="imagens/Arranjo-sup-d.png" alt="Arranjo floral direito" class="floral direita" />
     <div class="monograma">J | R</div>
   </header>
 
-  <!-- CONTEÚDO CENTRAL -->
   <main class="convite">
     <h1>Júlia &amp; Ruan</h1>
 
     <p class="subtitulo">Juntamente com seus pais, convidam para o seu casamento</p>
-
     <p class="data">23 de Maio de 2026 • 19h</p>
 
     <p class="local">
@@ -44,16 +34,16 @@
     </p>
 
     <p class="versículo">
-      <span class="texto-versiculo"
-        >Para que todos vejam, e saibam, e considerem, e juntamente entendam que a mão
-        do Senhor fez isto, e o Santo de Israel o criou.</span
-      >
+      <span class="texto-versiculo">
+        Para que todos vejam, e saibam, e considerem, e juntamente entendam que a mão
+        do Senhor fez isto, e o Santo de Israel o criou.
+      </span>
       <span class="referencia">Isaías 41:20</span>
     </p>
 
-    <!-- CONTAGEM REGRESSIVA -->
+    <!-- CONTAGEM -->
     <section class="countdown">
-      <div class="timer">
+      <div class="timer" id="timer">
         <div><span id="days">0</span><small>Dias</small></div>
         <div><span id="hours">0</span><small>Horas</small></div>
         <div><span id="minutes">0</span><small>Min</small></div>
@@ -61,161 +51,33 @@
       </div>
     </section>
 
-    <!-- MAPA - CERIMÔNIA -->
-    <section class="mapa">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.0802589337513!2d-44.120312224886455!3d-19.921022438028857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6eb13958d9c33%3A0x1ee632c261d349fb!2sComunidade%20Crist%C3%A3%20Casa%20do%20P%C3%A3o!5e0!3m2!1spt-BR!2sbr!4v1766849687881!5m2!1spt-BR!2sbr"
-        width="100%"
-        height="300"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-      <a
-        href="https://www.google.com/maps/dir/?api=1&destination=Comunidade+Cristã+Casa+do+Pão,+Av.+Durval+Alves+de+Faria,+2167+-+Olhos+Dagua+Tropical,+Contagem+-+MG,+32070-040"
-        target="_blank"
-        class="btn-mapa"
-        >📍 Como chegar à Comunidade Cristã Casa do Pão</a
-      >
-    </section>
-
-
-    <!-- PRESENTES -->
-    <section class="presentes">
-      <p>Seu carinho já é nosso maior presente</p>
-      <div class="links">
-        <a href="https://www.amazon.com.br" target="_blank">Amazon</a>
-        <a href="https://www.mercadolivre.com.br/" target="_blank">Mercado Livre</a>
-      </div>
-    </section>
-
     <!-- RSVP -->
     <section class="rsvp">
       <img src="imagens/Flor1.png" alt="Flor decorativa" class="flor-rsvp" />
       <h2>Confirme sua presença</h2>
+
       <form id="rsvpForm">
-        <input
-          type="text"
-          name="nome"
-          placeholder="Nome completo *"
-          required
-          autocomplete="off"
-        />
+        <input type="text" name="nome" placeholder="Nome completo *" required autocomplete="off" />
 
         <p>Você irá ao evento?</p>
         <label><input type="radio" name="presenca" value="sim" required /> Sim</label>
         <label><input type="radio" name="presenca" value="nao" /> Não</label>
 
-        <input
-          type="tel"
-          name="telefone"
-          placeholder="Telefone *"
-          required
-          autocomplete="off"
-          pattern="[0-9\s\-\+\(\)]{8,15}"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="E-mail *"
-          required
-          autocomplete="off"
-        />
+        <input type="tel" name="telefone" placeholder="Telefone *" required autocomplete="off" />
+        <input type="email" name="email" placeholder="E-mail *" required autocomplete="off" />
 
-        <div
-          id="acompanhantesContainer"
-          style="display: none; margin-top: 1em;"
-          aria-live="polite"
-        >
+        <div id="acompanhantesContainer" style="display:none; margin-top:1em;">
           <label>Quantos acompanhantes?</label>
-          <button type="button" id="menos" aria-label="Remover acompanhante">
-            −
-          </button>
-          <input
-            type="number"
-            id="qtdAcompanhantes"
-            value="0"
-            min="0"
-            max="10"
-            readonly
-            style="width: 3em; text-align: center"
-          />
-          <button type="button" id="mais" aria-label="Adicionar acompanhante">+</button>
+          <button type="button" id="menos">−</button>
+          <input type="number" id="qtdAcompanhantes" value="0" min="0" max="10" readonly />
+          <button type="button" id="mais">+</button>
 
           <div id="camposAcompanhantes"></div>
         </div>
 
-        <button type="submit" style="margin-top: 1em">Confirmar</button>
+        <button type="submit" style="margin-top:1em;">Confirmar</button>
       </form>
     </section>
   </main>
 
   <footer>Com amor, Júlia e Ruan</footer>
-
-  <script>
-    const presencaRadios = document.querySelectorAll('input[name="presenca"]');
-    const acompanhantesContainer = document.getElementById('acompanhantesContainer');
-    const menosBtn = document.getElementById('menos');
-    const maisBtn = document.getElementById('mais');
-    const qtdAcompanhantesInput = document.getElementById('qtdAcompanhantes');
-    const camposAcompanhantes = document.getElementById('camposAcompanhantes');
-
-    presencaRadios.forEach((radio) => {
-      radio.addEventListener('change', () => {
-        if (radio.value === 'sim' && radio.checked) {
-          acompanhantesContainer.style.display = 'block';
-        } else {
-          acompanhantesContainer.style.display = 'none';
-          qtdAcompanhantesInput.value = 0;
-          camposAcompanhantes.innerHTML = '';
-        }
-      });
-    });
-
-    maisBtn.addEventListener('click', () => {
-      let count = parseInt(qtdAcompanhantesInput.value);
-      if (count < 10) {
-        count++;
-        qtdAcompanhantesInput.value = count;
-        adicionarCampoAcompanhante(count);
-      }
-    });
-
-    menosBtn.addEventListener('click', () => {
-      let count = parseInt(qtdAcompanhantesInput.value);
-      if (count > 0) {
-        removerCampoAcompanhante(count);
-        count--;
-        qtdAcompanhantesInput.value = count;
-      }
-    });
-
-    function adicionarCampoAcompanhante(num) {
-      const div = document.createElement('div');
-      div.id = 'acompanhante-' + num;
-      div.style.marginTop = '0.5em';
-      div.innerHTML = `<input type="text" name="acompanhante${num}" placeholder="Nome do acompanhante *" required autocomplete="off">`;
-      camposAcompanhantes.appendChild(div);
-    }
-
-    function removerCampoAcompanhante(num) {
-      const div = document.getElementById('acompanhante-' + num);
-      if (div) {
-        camposAcompanhantes.removeChild(div);
-      }
-    }
-
-    document.getElementById('rsvpForm').addEventListener('submit', function (event) {
-      event.preventDefault();
-      alert('Presença confirmada! Obrigado.');
-      this.reset();
-      acompanhantesContainer.style.display = 'none';
-      camposAcompanhantes.innerHTML = '';
-      qtdAcompanhantesInput.value = 0;
-    });
-  </script>
-
-  <script src="script.js" defer></script>
-</body>
-</html>
