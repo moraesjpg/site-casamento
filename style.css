@@ -1,32 +1,23 @@
 /* =========================
    RESET
 ========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* =========================
-   VARIÁVEIS
-========================= */
 :root{
-  --texto: #000;      /* TODOS os textos pretos */
-  --bg: #111;         /* fundo fora do cartão */
-  --cartao: #fff;     /* fundo do convite */
-  --dourado: #d3b35a; /* borda */
-  --rosa: #a14b6a;    /* botão */
-  --rosa-hover: #8f4b5a;
+  --texto:#000;
+  --bg:#111;
+  --cartao:#fff;
+  --dourado:#d3b35a;
+  --rosa:#a14b6a;
+  --rosa-hover:#8f4b5a;
 }
 
 /* =========================
    BASE
 ========================= */
-html, body {
-  height: 100%;
-}
+html, body { height: 100%; }
 
-body {
+body{
   font-family: "Lato", sans-serif;
   background: var(--bg);
   color: var(--texto);
@@ -34,250 +25,215 @@ body {
 }
 
 /* =========================
-   CARTÃO DO CONVITE
+   CARTÃO
 ========================= */
-.pagina {
+.pagina{
   position: relative;
   width: min(720px, calc(100% - 24px));
   margin: 20px auto;
   background: var(--cartao);
-  overflow: hidden;
   border-radius: 10px;
+  overflow: hidden;
   padding: 90px 26px 60px;
-  min-height: 92vh; /* mantém proporção de “convite” */
+  min-height: 92vh;
 }
 
 /* borda dourada */
-.pagina::after {
-  content: "";
-  position: absolute;
+.pagina::after{
+  content:"";
+  position:absolute;
   inset: 16px;
   border: 3px solid var(--dourado);
-  pointer-events: none;
-  z-index: 3;
+  pointer-events:none;
+  z-index: 5;
 }
 
 /* =========================
-   IMAGENS (anti-quebra)
+   BLINDAGEM DE IMAGENS (evita imagem gigante quebrar layout)
 ========================= */
-/* Garante que img nunca “estoure” layout */
-img {
+/* Qualquer img dentro do cartão NÃO pode ficar gigante */
+.pagina img{
+  display:block;
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
-/* Se imagem não carregar, não altera fluxo (evita bagunça) */
-img[alt=""] {
-  line-height: 0;
+/* E se algum img for “perdido” dentro do fluxo (sem classe),
+   ele não pode ocupar a tela inteira: */
+.pagina > img:not(.canto){
+  max-width: 180px;          /* trava */
+  margin: 0 auto;
 }
 
 /* =========================
-   CANTOS DECORATIVOS
+   CANTOS DECORATIVOS (somente estes ficam absolutos)
 ========================= */
-.canto {
-  position: absolute;
-  z-index: 1;           /* atrás do conteúdo */
-  width: 240px;         /* trava tamanho */
-  height: auto;
-  pointer-events: none;
-  user-select: none;
+.canto{
+  position:absolute !important;
+  z-index: 2;                /* atrás do conteúdo */
+  width: 220px !important;   /* trava pra não estourar */
+  height:auto !important;
+  pointer-events:none;
+  user-select:none;
 }
 
-/* posições */
-.canto-sup-esq { top: -10px; left: -10px; }
-.canto-sup-dir { top: -10px; right: -10px; }
-.canto-inf-esq { bottom: -10px; left: -10px; }
-.canto-inf-dir { bottom: -10px; right: -10px; }
+.canto-sup-esq{ top:-10px; left:-10px; }
+.canto-sup-dir{ top:-10px; right:-10px; }
+.canto-inf-esq{ bottom:-10px; left:-10px; }
+.canto-inf-dir{ bottom:-10px; right:-10px; }
 
 /* =========================
-   CONTEÚDO (sempre na frente)
+   CONTEÚDO NA FRENTE
 ========================= */
-.topo-floral,
-.convite,
-footer {
+.topo-floral, .convite, footer{
   position: relative;
-  z-index: 4;
+  z-index: 6;
 }
 
 /* =========================
    TOPO / MONOGRAMA
 ========================= */
-.topo-floral {
+.topo-floral{
   height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
 }
 
-/* monograma como imagem */
-.monograma-img {
+.monograma-img{
   width: 92px;
-  height: auto;
   margin-top: 6px;
 }
 
 /* =========================
-   TEXTOS DO CONVITE
+   TEXTOS
 ========================= */
-.convite {
+.convite{
   max-width: 600px;
   margin: 0 auto;
   padding: 0 16px;
 }
 
-/* Nome do casal */
-.convite h1 {
-  font-family: "Great Vibes", cursive;
+.convite h1{
+  font-family:"Great Vibes", cursive;
   font-size: 4.4rem;
   font-weight: 400;
   letter-spacing: 2px;
-  margin: 0.45em 0 0.25em;
+  margin: .45em 0 .25em;
   color: var(--texto);
 }
 
-/* Subtítulo */
-.subtitulo {
-  font-family: "Cormorant Garamond", serif;
+.subtitulo{
+  font-family:"Cormorant Garamond", serif;
   font-size: 16px;
-  letter-spacing: 0.08em;
+  letter-spacing: .08em;
   line-height: 1.6;
   margin-bottom: 24px;
-  color: var(--texto);
   white-space: nowrap;
+  color: var(--texto);
 }
 
-/* Data */
-.data {
-  font-family: "Cormorant Garamond", serif;
+.data{
+  font-family:"Cormorant Garamond", serif;
   font-size: 1.18em;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: .12em;
   margin-bottom: 18px;
   color: var(--texto);
 }
 
-/* Local */
-.local {
-  font-family: "Cormorant Garamond", serif;
+.local{
+  font-family:"Cormorant Garamond", serif;
   font-size: 14px;
-  letter-spacing: 0.08em;
+  letter-spacing: .08em;
   line-height: 1.65;
   margin-bottom: 44px;
   color: var(--texto);
 }
 
-/* =========================
-   VERSÍCULO
-========================= */
-.versículo {
-  font-family: "Cormorant Garamond", serif;
+/* Versículo */
+.versículo{
+  font-family:"Cormorant Garamond", serif;
   font-size: 14px;
-  letter-spacing: 0.06em;
+  letter-spacing: .06em;
   line-height: 1.65;
   margin-bottom: 54px;
   color: var(--texto);
 }
 
-.texto-versiculo {
-  display: block;
-  font-style: italic;
-}
+.texto-versiculo{ display:block; font-style: italic; }
 
-.referencia {
-  display: block;
+.referencia{
+  display:block;
   margin-top: 8px;
   text-align: right;
   font-size: 13px;
   color: var(--texto);
 }
 
-/* =========================
-   CONTAGEM
-========================= */
-.countdown .timer {
-  display: flex;
-  justify-content: center;
+/* Contagem */
+.countdown .timer{
+  display:flex;
+  justify-content:center;
   gap: 24px;
   margin-bottom: 46px;
 }
 
-.timer div,
-.timer span,
-.timer small {
+.timer span{
+  display:block;
+  font-size: 28px;
+  font-weight: 300;
   color: var(--texto);
 }
 
-.timer span {
-  display: block;
-  font-size: 28px;
-  font-weight: 300;
-}
+.timer small{ color: var(--texto); }
 
-/* =========================
-   RSVP
-========================= */
-.rsvp {
-  margin-top: 6px;
-}
-
-.flor-rsvp {
-  width: 110px;            /* trava */
-  height: auto;
+/* RSVP */
+.flor-rsvp{
+  width: 110px;
   margin: 22px auto 16px;
 }
 
-/* título */
-.rsvp h2 {
-  font-family: "Cormorant Garamond", serif;
+.rsvp h2{
+  font-family:"Cormorant Garamond", serif;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: .1em;
   margin-bottom: 18px;
   color: var(--texto);
 }
 
-/* form */
-.rsvp form {
-  display: flex;
-  flex-direction: column;
+.rsvp form{
+  display:flex;
+  flex-direction:column;
   gap: 12px;
 }
 
-/* tudo do form em Cormorant e preto */
-.rsvp input,
-.rsvp label,
-.rsvp p,
-.rsvp small {
-  font-family: "Cormorant Garamond", serif;
-  letter-spacing: 0.05em;
+.rsvp input, .rsvp label, .rsvp p, .rsvp small{
+  font-family:"Cormorant Garamond", serif;
+  letter-spacing: .05em;
   color: var(--texto);
 }
 
-.rsvp input {
+.rsvp input{
   padding: 10px;
   border: 1px solid #ccc;
 }
 
-/* botão */
-.rsvp button {
+.rsvp button{
   padding: 12px;
   background: var(--rosa);
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-family: "Cormorant Garamond", serif;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  font-family:"Cormorant Garamond", serif;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: .12em;
 }
 
-.rsvp button:hover {
-  background: var(--rosa-hover);
-}
+.rsvp button:hover{ background: var(--rosa-hover); }
 
-/* =========================
-   RODAPÉ
-========================= */
-footer {
+/* Rodapé */
+footer{
   margin-top: 40px;
   font-size: 12px;
   color: var(--texto);
@@ -286,8 +242,8 @@ footer {
 /* =========================
    RESPONSIVO
 ========================= */
-@media (max-width: 768px) {
-  .pagina {
+@media (max-width: 768px){
+  .pagina{
     width: calc(100% - 16px);
     margin: 10px auto;
     border-radius: 0;
@@ -295,27 +251,14 @@ footer {
     min-height: 100vh;
   }
 
-  .pagina::after {
-    inset: 12px;
-  }
+  .pagina::after{ inset: 12px; }
 
-  .canto {
-    width: 190px; /* trava menor */
-  }
+  .canto{ width: 180px !important; }
 
-  .topo-floral {
-    height: 130px;
-  }
+  .topo-floral{ height: 130px; }
+  .monograma-img{ width: 80px; }
 
-  .monograma-img {
-    width: 80px;
-  }
+  .convite h1{ font-size: 3.2rem; }
 
-  .convite h1 {
-    font-size: 3.2rem;
-  }
-
-  .subtitulo {
-    white-space: normal;
-  }
+  .subtitulo{ white-space: normal; }
 }
