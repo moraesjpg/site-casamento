@@ -44,7 +44,7 @@ body{
   inset: 16px;
   border: 3px solid var(--dourado);
   pointer-events:none;
-  z-index: 4;
+  z-index: 1; /* MAIS BAIXO */
 }
 
 /* =========================
