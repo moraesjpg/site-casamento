@@ -33,61 +33,64 @@ body{
   margin: 20px auto;
   background: var(--cartao);
   border-radius: 10px;
-  overflow: hidden;
+  overflow: hidden;            /* CRÍTICO: nada sai pra fora */
   padding: 90px 26px 60px;
-  min-height: 92vh;
 }
 
-/* borda dourada */
+/* Borda dourada interna */
 .pagina::after{
   content:"";
   position:absolute;
   inset: 16px;
   border: 3px solid var(--dourado);
   pointer-events:none;
-  z-index: 5;
+  z-index: 4;
 }
 
 /* =========================
-   BLINDAGEM DE IMAGENS (evita imagem gigante quebrar layout)
+   BLINDAGEM GERAL DE IMAGENS
+   (impede qualquer img de explodir layout)
 ========================= */
-/* Qualquer img dentro do cartão NÃO pode ficar gigante */
 .pagina img{
-  display:block;
+  display: block;
   max-width: 100%;
   height: auto;
 }
 
-/* E se algum img for “perdido” dentro do fluxo (sem classe),
-   ele não pode ocupar a tela inteira: */
-.pagina > img:not(.canto){
-  max-width: 180px;          /* trava */
-  margin: 0 auto;
+/* Se existir alguma imagem "solta" no fluxo (sem classe),
+   ela vira pequena e centralizada */
+.pagina > img:not(.canto):not(.monograma-img):not(.flor-rsvp){
+  max-width: 180px !important;
+  margin: 0 auto !important;
 }
 
 /* =========================
-   CANTOS DECORATIVOS (somente estes ficam absolutos)
+   CANTOS DECORATIVOS
 ========================= */
 .canto{
-  position:absolute !important;
-  z-index: 2;                /* atrás do conteúdo */
-  width: 220px !important;   /* trava pra não estourar */
-  height:auto !important;
-  pointer-events:none;
-  user-select:none;
+  position: absolute;
+  z-index: 1;                 /* atrás de tudo */
+  width: 220px;
+  max-width: 45%;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
 }
 
-.canto-sup-esq{ top:-10px; left:-10px; }
-.canto-sup-dir{ top:-10px; right:-10px; }
-.canto-inf-esq{ bottom:-10px; left:-10px; }
-.canto-inf-dir{ bottom:-10px; right:-10px; }
+/* posições */
+.canto-sup-esq{ top: -10px; left: -10px; }
+.canto-sup-dir{ top: -10px; right: -10px; }
+.canto-inf-esq{ bottom: -10px; left: -10px; }
+.canto-inf-dir{ bottom: -10px; right: -10px; }
 
 /* =========================
    CONTEÚDO NA FRENTE
 ========================= */
-.topo-floral, .convite, footer{
+.topo-floral,
+.convite,
+footer{
   position: relative;
-  z-index: 6;
+  z-index: 5;
 }
 
 /* =========================
@@ -95,13 +98,15 @@ body{
 ========================= */
 .topo-floral{
   height: 150px;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .monograma-img{
   width: 92px;
+  max-width: 92px;            /* trava */
+  height: auto;
   margin-top: 6px;
 }
 
@@ -171,7 +176,9 @@ body{
   color: var(--texto);
 }
 
-/* Contagem */
+/* =========================
+   CONTAGEM
+========================= */
 .countdown .timer{
   display:flex;
   justify-content:center;
@@ -188,9 +195,13 @@ body{
 
 .timer small{ color: var(--texto); }
 
-/* RSVP */
+/* =========================
+   RSVP
+========================= */
 .flor-rsvp{
   width: 110px;
+  max-width: 110px;          /* trava contra “explodir” */
+  height: auto;
   margin: 22px auto 16px;
 }
 
@@ -208,6 +219,7 @@ body{
   gap: 12px;
 }
 
+/* Textos e campos */
 .rsvp input, .rsvp label, .rsvp p, .rsvp small{
   font-family:"Cormorant Garamond", serif;
   letter-spacing: .05em;
@@ -232,7 +244,9 @@ body{
 
 .rsvp button:hover{ background: var(--rosa-hover); }
 
-/* Rodapé */
+/* =========================
+   RODAPÉ
+========================= */
 footer{
   margin-top: 40px;
   font-size: 12px;
@@ -248,15 +262,17 @@ footer{
     margin: 10px auto;
     border-radius: 0;
     padding: 78px 18px 50px;
-    min-height: 100vh;
   }
 
   .pagina::after{ inset: 12px; }
 
-  .canto{ width: 180px !important; }
+  .canto{
+    width: 180px;
+    max-width: 52%;
+  }
 
   .topo-floral{ height: 130px; }
-  .monograma-img{ width: 80px; }
+  .monograma-img{ width: 80px; max-width: 80px; }
 
   .convite h1{ font-size: 3.2rem; }
 
