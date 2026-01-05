@@ -1,217 +1,289 @@
-/* RESET */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+style
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* =========================
+   BASE
+========================= */
 :root{
-  --texto:#000;
-  --bg:#111;
-  --cartao:#fff;
-  --dourado:#d3b35a;
-  --rosa:#a14b6a;
-  --rosa-hover:#8f4b5a;
+  --cor-texto: #5a3a3a;
+  --bg: #fafafa;
+  --rosa: #a14b6a;
+  --rosa-hover: #8f4b5a;
 }
 
-body{
+body {
+  font-family: "Lato", sans-serif;
   background: var(--bg);
-  color: var(--texto);
-  text-align:center;
-  font-family:"Lato",sans-serif;
+  color: var(--cor-texto);
+  text-align: center;
 }
 
-/* CARTÃO */
-.pagina{
+/* =========================
+   TOPO FLORAL
+========================= */
+.topo-floral {
   position: relative;
-  width: min(720px, calc(100% - 24px));
-  margin: 24px auto;
-  background: var(--cartao);
-  border-radius: 10px;
-  overflow: hidden;
-  padding: 80px 28px 60px;
-  min-height: 90vh; /* mantém “cara de convite” */
+  height: 280px;
+  max-width: 1100px;
+  margin: 40px auto 0;
 }
 
-/* BORDA */
-.pagina::after{
-  content:"";
-  position:absolute;
-  inset: 16px;
-  border: 3px solid var(--dourado);
-  pointer-events:none;
-  z-index: 2;
+.floral {
+  position: absolute;
+  top: 0;
+  width: 380px;
+  max-width: 45%;
 }
 
-/* CANTOS (TRAVADOS) */
-.canto{
-  position:absolute;
-  z-index: 1;         /* atrás do conteúdo e atrás da borda */
-  width: 230px;       /* tamanho fixo pra não explodir */
-  height: auto;
-  pointer-events:none;
-  user-select:none;
-  opacity: 1;
+.floral.esquerda { left: 0; }
+.floral.direita  { right: 0; }
+
+/* ✅ Monograma em Cormorant Garamond */
+.monograma {
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 3rem;
+  letter-spacing: 0.15em;
+  color: var(--cor-texto);
 }
 
-.canto-sup-esq{ top:-8px; left:-8px; }
-.canto-sup-dir{ top:-8px; right:-8px; }
-.canto-inf-esq{ bottom:-8px; left:-8px; }
-.canto-inf-dir{ bottom:-8px; right:-8px; }
-
-/* CONTEÚDO SEMPRE NA FRENTE */
-.topo-floral, .convite, footer{
-  position: relative;
-  z-index: 3;
-}
-
-/* TOPO / MONOGRAMA */
-.topo-floral{
-  height: 140px;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-}
-
-.monograma-img{
-  width: 92px;
-  height:auto;
-  margin-top: 4px;
-}
-
-/* TEXTOS */
-.convite{
+/* =========================
+   CONVITE
+========================= */
+.convite {
   max-width: 600px;
   margin: 0 auto;
-  padding: 0 14px;
+  padding: 60px 20px;
 }
 
-.convite h1{
-  font-family:"Great Vibes",cursive;
-  font-size: 4.4rem;
+/* ✅ Nome do casal em Great Vibes */
+.convite h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 4.5rem;
   font-weight: 400;
   letter-spacing: 2px;
-  margin: .4em 0 .25em;
-  color: var(--texto);
+  margin: 0.5em 0;
 }
 
-.subtitulo{
-  font-family:"Cormorant Garamond",serif;
+/* ✅ Subtítulo em Cormorant Garamond */
+.subtitulo {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  letter-spacing: 0.08em;
   font-size: 16px;
-  letter-spacing: .08em;
   line-height: 1.6;
-  margin-bottom: 22px;
+  margin-bottom: 30px;
   white-space: nowrap;
-  color: var(--texto);
 }
 
-.data{
-  font-family:"Cormorant Garamond",serif;
-  font-size: 1.15em;
+/* ✅ Data em Cormorant Garamond (um pouco maior) */
+.data {
+  font-family: "Cormorant Garamond", serif;
   font-weight: 500;
-  letter-spacing: .12em;
-  margin-bottom: 16px;
-  color: var(--texto);
+  letter-spacing: 0.12em;
+  font-size: 1.15em; /* maiorzinho como você pediu */
+  margin-bottom: 20px;
 }
 
-.local{
-  font-family:"Cormorant Garamond",serif;
+/* ✅ Local em Cormorant Garamond */
+.local {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
   font-size: 14px;
-  letter-spacing: .08em;
-  line-height: 1.65;
-  margin-bottom: 38px;
-  color: var(--texto);
+  margin-bottom: 50px;
 }
 
-.versículo{
-  font-family:"Cormorant Garamond",serif;
+/* =========================
+   VERSÍCULO
+========================= */
+/* ✅ Versículo inteiro em Cormorant Garamond */
+.versículo {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  letter-spacing: 0.06em;
   font-size: 14px;
-  letter-spacing: .06em;
-  line-height: 1.65;
-  margin-bottom: 46px;
-  color: var(--texto);
+  line-height: 1.6;
+  margin-bottom: 60px;
 }
 
-.texto-versiculo{ display:block; font-style: italic; }
-.referencia{ display:block; margin-top:8px; text-align:right; font-size:13px; color:var(--texto); }
+.texto-versiculo {
+  display: block;
+  font-style: italic;
+}
 
-/* CONTAGEM */
-.countdown .timer{
-  display:flex;
-  justify-content:center;
+.referencia {
+  display: block;
+  margin-top: 8px;
+  text-align: right;
+  font-size: 13px;
+}
+
+/* =========================
+   CONTAGEM REGRESSIVA
+========================= */
+.countdown .timer {
+  display: flex;
+  justify-content: center;
   gap: 24px;
-  margin-bottom: 42px;
+  margin-bottom: 50px;
 }
 
-.timer span{ display:block; font-size:28px; font-weight:300; color:var(--texto); }
-.timer small{ color:var(--texto); }
-
-/* RSVP */
-.flor-rsvp{
-  display:block;
-  width: 110px;       /* TRAVA a flor */
-  height:auto;
-  margin: 22px auto 14px;
+.timer div {
+  font-size: 14px;
 }
 
-.rsvp h2{
-  font-family:"Cormorant Garamond",serif;
+.timer span {
+  display: block;
+  font-size: 28px;
+  font-weight: 300;
+}
+
+/* =========================
+   MAPA
+========================= */
+.mapa {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.btn-mapa {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 22px;
+  background-color: #a85c6d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.btn-mapa:hover {
+  background-color: var(--rosa-hover);
+}
+
+/* =========================
+   PRESENTES
+========================= */
+.presentes {
+  margin-bottom: 30px;
+}
+
+.presentes p {
+  margin-bottom: 15px;
+}
+
+.presentes .links a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: var(--rosa);
+}
+
+/* =========================
+   RSVP
+========================= */
+/* =========================
+   RSVP
+========================= */
+.flor-rsvp {
+  display: block;
+  margin: 30px auto 20px;
+  width: 120px;
+  max-width: 100%;
+}
+
+/* Título */
+.rsvp h2 {
+  font-family: "Cormorant Garamond", serif;
   font-weight: 500;
-  letter-spacing:.1em;
-  margin-bottom: 16px;
-  color: var(--texto);
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
 }
 
-.rsvp form{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+/* Formulário */
+.rsvp form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.rsvp input, .rsvp label, .rsvp p{
-  font-family:"Cormorant Garamond",serif;
-  letter-spacing:.05em;
-  color:var(--texto);
+/* ✅ Inputs e textos em Cormorant Garamond */
+.rsvp input,
+.rsvp label,
+.rsvp p,
+.rsvp button {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  letter-spacing: 0.05em;
 }
 
-.rsvp input{
-  padding:10px;
-  border:1px solid #ccc;
+/* Inputs */
+.rsvp input {
+  padding: 10px;
+  border: 1px solid #ddd;
 }
 
-.rsvp button{
-  padding:12px;
+/* Botão */
+.rsvp button {
+  padding: 12px;
   background: var(--rosa);
-  color:#fff;
-  border:none;
-  cursor:pointer;
-  font-family:"Cormorant Garamond",serif;
-  font-weight:500;
-  letter-spacing:.12em;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.12em;
 }
 
-.rsvp button:hover{ background: var(--rosa-hover); }
+/* Hover opcional */
+.rsvp button:hover {
+  background: var(--rosa-hover);
+}
 
-/* RODAPÉ */
-footer{
-  margin-top: 38px;
+/* =========================
+   RODAPÉ
+========================= */
+footer {
   font-size: 12px;
-  color: var(--texto);
+  margin: 40px 0;
+  color: #888;
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px){
-  .pagina{
-    width: calc(100% - 16px);
-    margin: 12px auto;
-    border-radius: 0;
-    padding: 74px 18px 48px;
-    min-height: 100vh;
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+  .topo-floral {
+    height: 200px;
   }
 
-  .pagina::after{ inset: 12px; }
+  .floral {
+    width: 260px;
+  }
 
-  .canto{ width: 190px; }
+  .monograma {
+    top: 120px;
+    font-size: 1.1rem;
+  }
 
-  .topo-floral{ height: 120px; }
-  .monograma-img{ width: 80px; }
+  .convite h1 {
+    font-size: 52px;
+  }
 
-  .convite h1{ font-size: 3.2rem; }
-  .subtitulo{ white-space: normal; }
+  .subtitulo {
+    white-space: normal;
+  }
 }
