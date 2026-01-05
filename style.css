@@ -195,6 +195,9 @@ body {
 /* =========================
    RSVP
 ========================= */
+/* =========================
+   RSVP
+========================= */
 .flor-rsvp {
   display: block;
   margin: 30px auto 20px;
@@ -202,7 +205,7 @@ body {
   max-width: 100%;
 }
 
-/* ✅ "Confirme sua presença" em Cormorant Garamond */
+/* Título */
 .rsvp h2 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
@@ -210,25 +213,43 @@ body {
   margin-bottom: 20px;
 }
 
+/* Formulário */
 .rsvp form {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-/* Formulário continua em Lato (melhor leitura) */
+/* ✅ Inputs e textos em Cormorant Garamond */
 .rsvp input,
+.rsvp label,
+.rsvp p,
 .rsvp button {
-  padding: 10px;
-  border: 1px solid #ddd;
-  font-family: "Lato", sans-serif;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  letter-spacing: 0.05em;
 }
 
+/* Inputs */
+.rsvp input {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Botão */
 .rsvp button {
+  padding: 12px;
   background: var(--rosa);
   color: #fff;
   border: none;
   cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+/* Hover opcional */
+.rsvp button:hover {
+  background: var(--rosa-hover);
 }
 
 /* =========================
