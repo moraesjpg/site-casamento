@@ -62,22 +62,11 @@ body{
 }
 
 /* TOPO / MONOGRAMA */
-.topo-floral {
-  position: relative;
-  height: 280px;
-  max-width: 1100px;
-  margin: 40px auto 0;
-}
-
-.floral {
-  position: absolute;
-  top: 0;
-  width: 380px;
-  max-width: 45%;
-}
-
-.floral.esquerda { left: 0; }
-.floral.direita  { right: 0; }
+.topo-floral{
+  height: 140px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
 }
 
 .monograma-img{
@@ -142,33 +131,23 @@ body{
 .texto-versiculo{ display:block; font-style: italic; }
 .referencia{ display:block; margin-top:8px; text-align:right; font-size:13px; color:var(--texto); }
 
-/* =========================
-   CONTAGEM REGRESSIVA
-========================= */
-.countdown .timer {
-  display: flex;
-  justify-content: center;
+/* CONTAGEM */
+.countdown .timer{
+  display:flex;
+  justify-content:center;
   gap: 24px;
-  margin-bottom: 50px;
+  margin-bottom: 42px;
 }
 
-.timer div {
-  font-size: 14px;
-}
-
-.timer span {
-  display: block;
-  font-size: 28px;
-  font-weight: 300;
-  color:var(--texto)
-}
+.timer span{ display:block; font-size:28px; font-weight:300; color:var(--texto); }
+.timer small{ color:var(--texto); }
 
 /* RSVP */
 .flor-rsvp{
- display: block;
-  margin: 30px auto 20px;
-  width: 120px;
-  max-width: 100%;
+  display:block;
+  width: 110px;       /* TRAVA a flor */
+  height:auto;
+  margin: 22px auto 14px;
 }
 
 .rsvp h2{
