@@ -7,20 +7,30 @@
 
   <link rel="stylesheet" href="style.css" />
 
+  <!-- Preconnect (melhora carregamento das fontes) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <!-- Fontes -->
   <link
-  href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500&family=Lato:wght@300;400&display=swap"
-  rel="stylesheet"
-/>
-
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500&family=Lato:wght@300;400&display=swap"
+    rel="stylesheet"
   />
 </head>
 
 <body>
   <!-- ARRANJO FLORAL SUPERIOR -->
   <header class="topo-floral">
-    <img src="imagens/Arranjo-sup-e.png" alt="Arranjo floral esquerdo" class="floral esquerda" />
-    <img src="imagens/Arranjo-sup-d.png" alt="Arranjo floral direito" class="floral direita" />
+    <img
+      src="imagens/Arranjo-sup-e.png"
+      alt="Arranjo floral esquerdo"
+      class="floral esquerda"
+    />
+    <img
+      src="imagens/Arranjo-sup-d.png"
+      alt="Arranjo floral direito"
+      class="floral direita"
+    />
     <div class="monograma">J | R</div>
   </header>
 
@@ -59,19 +69,44 @@
       <h2>Confirme sua presença</h2>
 
       <form id="rsvpForm">
-        <input type="text" name="nome" placeholder="Nome completo *" required autocomplete="off" />
+        <input
+          type="text"
+          name="nome"
+          placeholder="Nome completo *"
+          required
+          autocomplete="off"
+        />
 
         <p>Você irá ao evento?</p>
         <label><input type="radio" name="presenca" value="sim" required /> Sim</label>
         <label><input type="radio" name="presenca" value="nao" /> Não</label>
 
-        <input type="tel" name="telefone" placeholder="Telefone *" required autocomplete="off" />
-        <input type="email" name="email" placeholder="E-mail *" required autocomplete="off" />
+        <input
+          type="tel"
+          name="telefone"
+          placeholder="Telefone *"
+          required
+          autocomplete="off"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="E-mail *"
+          required
+          autocomplete="off"
+        />
 
         <div id="acompanhantesContainer" style="display:none; margin-top:1em;">
           <label>Quantos acompanhantes?</label>
           <button type="button" id="menos">−</button>
-          <input type="number" id="qtdAcompanhantes" value="0" min="0" max="10" readonly />
+          <input
+            type="number"
+            id="qtdAcompanhantes"
+            value="0"
+            min="0"
+            max="10"
+            readonly
+          />
           <button type="button" id="mais">+</button>
 
           <div id="camposAcompanhantes"></div>
@@ -96,10 +131,11 @@
     const qtdAcompanhantesInput = document.getElementById('qtdAcompanhantes');
     const camposAcompanhantes = document.getElementById('camposAcompanhantes');
 
-    presencaRadios.forEach(radio => {
+    presencaRadios.forEach((radio) => {
       radio.addEventListener('change', () => {
         acompanhantesContainer.style.display =
           radio.value === 'sim' && radio.checked ? 'block' : 'none';
+
         if (radio.value !== 'sim') {
           qtdAcompanhantesInput.value = 0;
           camposAcompanhantes.innerHTML = '';
@@ -112,9 +148,17 @@
       if (count < 10) {
         count++;
         qtdAcompanhantesInput.value = count;
+
         const div = document.createElement('div');
         div.id = `acompanhante-${count}`;
-        div.innerHTML = `<input type="text" name="acompanhante${count}" placeholder="Nome do acompanhante *" required>`;
+        div.innerHTML = `
+          <input
+            type="text"
+            name="acompanhante${count}"
+            placeholder="Nome do acompanhante *"
+            required
+          />
+        `;
         camposAcompanhantes.appendChild(div);
       }
     });
@@ -137,7 +181,7 @@
       try {
         await fetch(SCRIPT_URL, {
           method: "POST",
-          body: JSON.stringify(payload)
+          body: JSON.stringify(payload),
         });
 
         alert("Presença confirmada! ❤️");
@@ -145,7 +189,6 @@
         acompanhantesContainer.style.display = "none";
         camposAcompanhantes.innerHTML = "";
         qtdAcompanhantesInput.value = 0;
-
       } catch (err) {
         alert("Erro ao enviar. Tente novamente.");
       }
