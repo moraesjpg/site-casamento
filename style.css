@@ -69,7 +69,7 @@ body{
 ========================= */
 .canto{
   position: absolute;
-  z-index: 1;                 /* atrás de tudo */
+  z-index: 3;                 /*na frente da borda dourada */
   width: 220px;
   max-width: 45%;
   height: auto;
