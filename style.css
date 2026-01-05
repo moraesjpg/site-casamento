@@ -1,144 +1,217 @@
-/* =========================
-   RESET
-========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root{
+  --texto:#000;
+  --bg:#111;
+  --cartao:#fff;
+  --dourado:#d3b35a;
+  --rosa:#a14b6a;
+  --rosa-hover:#8f4b5a;
 }
 
-/* =========================
-   VARIÁVEIS
-========================= */
-:root {
-  --texto: #000;        /* TODOS OS TEXTOS PRETOS */
-  --bg: #111;           /* fundo fora do convite */
-  --cartao: #fff;       /* fundo do convite */
-  --rosa: #a14b6a;
-  --rosa-hover: #8f4b5a;
-  --dourado: #d3b35a;
-}
-
-/* =========================
-   BASE
-========================= */
-body {
-  font-family: "Lato", sans-serif;
+body{
   background: var(--bg);
   color: var(--texto);
-  text-align: center;
+  text-align:center;
+  font-family:"Lato",sans-serif;
 }
 
-/* =========================
-   CARTÃO DO CONVITE
-========================= */
-.pagina {
+/* CARTÃO */
+.pagina{
   position: relative;
-  max-width: 720px;
-  margin: 28px auto;
+  width: min(720px, calc(100% - 24px));
+  margin: 24px auto;
   background: var(--cartao);
-  padding: 90px 24px 60px;
+  border-radius: 10px;
   overflow: hidden;
-  border-radius: 6px;
+  padding: 80px 28px 60px;
+  min-height: 90vh; /* mantém “cara de convite” */
 }
 
-/* borda dourada */
-.pagina::after {
-  content: "";
-  position: absolute;
-  inset: 18px;
+/* BORDA */
+.pagina::after{
+  content:"";
+  position:absolute;
+  inset: 16px;
   border: 3px solid var(--dourado);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* =========================
-   CANTOS DECORATIVOS
-========================= */
-.canto {
-  position: absolute;
+  pointer-events:none;
   z-index: 2;
-  width: 250px;
-  max-width: 45%;
-  pointer-events: none;
 }
 
-.canto-sup-esq { top: -10px; left: -10px; }
-.canto-sup-dir { top: -10px; right: -10px; }
-.canto-inf-esq { bottom: -10px; left: -10px; }
-.canto-inf-dir { bottom: -10px; right: -10px; }
+/* CANTOS (TRAVADOS) */
+.canto{
+  position:absolute;
+  z-index: 1;         /* atrás do conteúdo e atrás da borda */
+  width: 230px;       /* tamanho fixo pra não explodir */
+  height: auto;
+  pointer-events:none;
+  user-select:none;
+  opacity: 1;
+}
 
-/* conteúdo acima */
-.topo-floral,
-.convite,
-footer {
+.canto-sup-esq{ top:-8px; left:-8px; }
+.canto-sup-dir{ top:-8px; right:-8px; }
+.canto-inf-esq{ bottom:-8px; left:-8px; }
+.canto-inf-dir{ bottom:-8px; right:-8px; }
+
+/* CONTEÚDO SEMPRE NA FRENTE */
+.topo-floral, .convite, footer{
   position: relative;
   z-index: 3;
 }
 
-/* =========================
-   TOPO / MONOGRAMA
-========================= */
-.topo-floral {
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+/* TOPO / MONOGRAMA */
+.topo-floral{
+  height: 140px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
 }
 
-.monograma-img {
-  width: 90px;
-  margin-top: 6px;
+.monograma-img{
+  width: 92px;
+  height:auto;
+  margin-top: 4px;
 }
 
-/* =========================
-   CONVITE
-========================= */
-.convite {
+/* TEXTOS */
+.convite{
   max-width: 600px;
   margin: 0 auto;
-  padding: 10px 20px 0;
+  padding: 0 14px;
 }
 
-/* Nome do casal */
-.convite h1 {
-  font-family: "Great Vibes", cursive;
-  font-size: 4.5rem;
+.convite h1{
+  font-family:"Great Vibes",cursive;
+  font-size: 4.4rem;
   font-weight: 400;
   letter-spacing: 2px;
-  margin: 0.5em 0;
+  margin: .4em 0 .25em;
   color: var(--texto);
 }
 
-/* Subtítulo */
-.subtitulo {
-  font-family: "Cormorant Garamond", serif;
+.subtitulo{
+  font-family:"Cormorant Garamond",serif;
   font-size: 16px;
-  letter-spacing: 0.08em;
+  letter-spacing: .08em;
   line-height: 1.6;
-  margin-bottom: 26px;
+  margin-bottom: 22px;
   white-space: nowrap;
   color: var(--texto);
 }
 
-/* Data */
-.data {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.18em;
+.data{
+  font-family:"Cormorant Garamond",serif;
+  font-size: 1.15em;
   font-weight: 500;
-  letter-spacing: 0.12em;
-  margin-bottom: 18px;
+  letter-spacing: .12em;
+  margin-bottom: 16px;
   color: var(--texto);
 }
 
-/* Local */
-.local {
-  font-family: "Cormorant Garamond", serif;
+.local{
+  font-family:"Cormorant Garamond",serif;
   font-size: 14px;
-  letter-spacing: 0.08em;
+  letter-spacing: .08em;
   line-height: 1.65;
-  margin-bottom: 42px;
+  margin-bottom: 38px;
   color: var(--texto);
 }
 
-/* =================
+.versículo{
+  font-family:"Cormorant Garamond",serif;
+  font-size: 14px;
+  letter-spacing: .06em;
+  line-height: 1.65;
+  margin-bottom: 46px;
+  color: var(--texto);
+}
+
+.texto-versiculo{ display:block; font-style: italic; }
+.referencia{ display:block; margin-top:8px; text-align:right; font-size:13px; color:var(--texto); }
+
+/* CONTAGEM */
+.countdown .timer{
+  display:flex;
+  justify-content:center;
+  gap: 24px;
+  margin-bottom: 42px;
+}
+
+.timer span{ display:block; font-size:28px; font-weight:300; color:var(--texto); }
+.timer small{ color:var(--texto); }
+
+/* RSVP */
+.flor-rsvp{
+  display:block;
+  width: 110px;       /* TRAVA a flor */
+  height:auto;
+  margin: 22px auto 14px;
+}
+
+.rsvp h2{
+  font-family:"Cormorant Garamond",serif;
+  font-weight: 500;
+  letter-spacing:.1em;
+  margin-bottom: 16px;
+  color: var(--texto);
+}
+
+.rsvp form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.rsvp input, .rsvp label, .rsvp p{
+  font-family:"Cormorant Garamond",serif;
+  letter-spacing:.05em;
+  color:var(--texto);
+}
+
+.rsvp input{
+  padding:10px;
+  border:1px solid #ccc;
+}
+
+.rsvp button{
+  padding:12px;
+  background: var(--rosa);
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  font-family:"Cormorant Garamond",serif;
+  font-weight:500;
+  letter-spacing:.12em;
+}
+
+.rsvp button:hover{ background: var(--rosa-hover); }
+
+/* RODAPÉ */
+footer{
+  margin-top: 38px;
+  font-size: 12px;
+  color: var(--texto);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px){
+  .pagina{
+    width: calc(100% - 16px);
+    margin: 12px auto;
+    border-radius: 0;
+    padding: 74px 18px 48px;
+    min-height: 100vh;
+  }
+
+  .pagina::after{ inset: 12px; }
+
+  .canto{ width: 190px; }
+
+  .topo-floral{ height: 120px; }
+  .monograma-img{ width: 80px; }
+
+  .convite h1{ font-size: 3.2rem; }
+  .subtitulo{ white-space: normal; }
+}
