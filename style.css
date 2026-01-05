@@ -47,9 +47,9 @@ body {
   top: 160px;
   left: 50%;
   transform: translateX(-50%);
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  letter-spacing: 6px;
+ font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  letter-spacing: 4px;
   color: #5a3a3a;
 }
 
