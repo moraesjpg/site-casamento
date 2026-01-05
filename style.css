@@ -11,9 +11,9 @@
    VARIÁVEIS
 ========================= */
 :root {
-  --cor-texto: #5a3a3a;
-  --bg: #111;            /* fundo fora do "cartão" (como no print) */
-  --cartao: #fff;        /* fundo do convite */
+  --texto: #000;        /* TODOS OS TEXTOS PRETOS */
+  --bg: #111;           /* fundo fora do convite */
+  --cartao: #fff;       /* fundo do convite */
   --rosa: #a14b6a;
   --rosa-hover: #8f4b5a;
   --dourado: #d3b35a;
@@ -25,12 +25,12 @@
 body {
   font-family: "Lato", sans-serif;
   background: var(--bg);
-  color: var(--cor-texto);
+  color: var(--texto);
   text-align: center;
 }
 
 /* =========================
-   CARTÃO DO CONVITE (container)
+   CARTÃO DO CONVITE
 ========================= */
 .pagina {
   position: relative;
@@ -42,7 +42,7 @@ body {
   border-radius: 6px;
 }
 
-/* borda dourada interna (igual convite) */
+/* borda dourada */
 .pagina::after {
   content: "";
   position: absolute;
@@ -57,12 +57,10 @@ body {
 ========================= */
 .canto {
   position: absolute;
-  z-index: 2;          /* acima da borda */
+  z-index: 2;
   width: 250px;
   max-width: 45%;
-  height: auto;
   pointer-events: none;
-  user-select: none;
 }
 
 .canto-sup-esq { top: -10px; left: -10px; }
@@ -70,7 +68,7 @@ body {
 .canto-inf-esq { bottom: -10px; left: -10px; }
 .canto-inf-dir { bottom: -10px; right: -10px; }
 
-/* garante que o conteúdo fique acima das decorações */
+/* conteúdo acima */
 .topo-floral,
 .convite,
 footer {
@@ -79,10 +77,9 @@ footer {
 }
 
 /* =========================
-   TOPO / MONOGRAMA (imagem)
+   TOPO / MONOGRAMA
 ========================= */
 .topo-floral {
-  position: relative;
   height: 150px;
   display: flex;
   justify-content: center;
@@ -91,7 +88,6 @@ footer {
 
 .monograma-img {
   width: 90px;
-  height: auto;
   margin-top: 6px;
 }
 
@@ -111,179 +107,38 @@ footer {
   font-weight: 400;
   letter-spacing: 2px;
   margin: 0.5em 0;
-  color: #000; /* PRETO */
+  color: var(--texto);
 }
 
 /* Subtítulo */
 .subtitulo {
   font-family: "Cormorant Garamond", serif;
-  font-weight: 400;
-  letter-spacing: 0.08em;
   font-size: 16px;
+  letter-spacing: 0.08em;
   line-height: 1.6;
   margin-bottom: 26px;
   white-space: nowrap;
+  color: var(--texto);
 }
 
-/* Data (um pouco maior) */
+/* Data */
 .data {
   font-family: "Cormorant Garamond", serif;
+  font-size: 1.18em;
   font-weight: 500;
   letter-spacing: 0.12em;
-  font-size: 1.18em;
   margin-bottom: 18px;
+  color: var(--texto);
 }
 
 /* Local */
 .local {
   font-family: "Cormorant Garamond", serif;
-  font-weight: 400;
+  font-size: 14px;
   letter-spacing: 0.08em;
   line-height: 1.65;
-  font-size: 14px;
   margin-bottom: 42px;
+  color: var(--texto);
 }
 
-/* =========================
-   VERSÍCULO
-========================= */
-.versículo {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  font-size: 14px;
-  line-height: 1.65;
-  margin-bottom: 52px;
-}
-
-.texto-versiculo {
-  display: block;
-  font-style: italic;
-}
-
-.referencia {
-  display: block;
-  margin-top: 8px;
-  text-align: right;
-  font-size: 13px;
-}
-
-/* =========================
-   CONTAGEM REGRESSIVA
-========================= */
-.countdown .timer {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-bottom: 46px;
-}
-
-.timer div {
-  font-size: 14px;
-}
-
-.timer span {
-  display: block;
-  font-size: 28px;
-  font-weight: 300;
-}
-
-/* =========================
-   RSVP
-========================= */
-.flor-rsvp {
-  display: block;
-  margin: 30px auto 20px;
-  width: 120px;
-  max-width: 100%;
-}
-
-.rsvp h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  margin-bottom: 18px;
-}
-
-/* Form */
-.rsvp form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* Textos e campos em Cormorant */
-.rsvp input,
-.rsvp label,
-.rsvp p,
-.rsvp button {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-}
-
-/* Inputs */
-.rsvp input {
-  padding: 10px;
-  border: 1px solid #ddd;
-}
-
-/* Botão */
-.rsvp button {
-  padding: 12px;
-  background: var(--rosa);
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-}
-
-.rsvp button:hover {
-  background: var(--rosa-hover);
-}
-
-/* =========================
-   RODAPÉ
-========================= */
-footer {
-  font-size: 12px;
-  margin: 40px 0 0;
-  color: #888;
-}
-
-/* =========================
-   RESPONSIVO
-========================= */
-@media (max-width: 768px) {
-  .pagina {
-    margin: 0;
-    max-width: 100%;
-    border-radius: 0;
-    padding: 80px 18px 50px;
-  }
-
-  .pagina::after {
-    inset: 14px;
-  }
-
-  .canto {
-    width: 200px;
-  }
-
-  .topo-floral {
-    height: 130px;
-  }
-
-  .monograma-img {
-    width: 80px;
-  }
-
-  .convite h1 {
-    font-size: 52px;
-  }
-
-  .subtitulo {
-    white-space: normal;
-  }
-}
+/* =================
