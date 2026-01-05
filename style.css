@@ -52,7 +52,7 @@ body {
   transform: translateX(-50%);
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 3rem;
   letter-spacing: 0.25em;
   color: var(--cor-texto);
 }
