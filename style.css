@@ -3,13 +3,16 @@
 ========================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* =========================
+   VARIÁVEIS
+========================= */
 :root{
-  --texto:#000;
-  --bg:#111;
-  --cartao:#fff;
-  --dourado:#d3b35a;
-  --rosa:#a14b6a;
-  --rosa-hover:#8f4b5a;
+  --texto: #000;
+  --bg: #111;
+  --cartao: #fff;
+  --dourado: #d3b35a;
+  --rosa: #a14b6a;
+  --rosa-hover: #8f4b5a;
 }
 
 /* =========================
@@ -33,23 +36,22 @@ body{
   margin: 20px auto;
   background: var(--cartao);
   border-radius: 10px;
-  overflow: hidden;            /* CRÍTICO: nada sai pra fora */
+  overflow: hidden;                 /* nada sai pra fora */
   padding: 90px 26px 60px;
 }
 
-/* Borda dourada interna */
+/* BORDA DOURADA (POR BAIXO DAS FLORES) */
 .pagina::after{
   content:"";
   position:absolute;
   inset: 16px;
   border: 3px solid var(--dourado);
   pointer-events:none;
-  z-index: 1; /* MAIS BAIXO */
+  z-index: 1;                        /* abaixo das flores */
 }
 
 /* =========================
-   BLINDAGEM GERAL DE IMAGENS
-   (impede qualquer img de explodir layout)
+   BLINDAGEM DE IMAGENS
 ========================= */
 .pagina img{
   display: block;
@@ -57,19 +59,18 @@ body{
   height: auto;
 }
 
-/* Se existir alguma imagem "solta" no fluxo (sem classe),
-   ela vira pequena e centralizada */
+/* se tiver imagem “solta” no fluxo, ela não explode */
 .pagina > img:not(.canto):not(.monograma-img):not(.flor-rsvp){
   max-width: 180px !important;
   margin: 0 auto !important;
 }
 
 /* =========================
-   CANTOS DECORATIVOS
+   CANTOS DECORATIVOS (FLORES)
 ========================= */
 .canto{
   position: absolute;
-  z-index: 3;                 /*na frente da borda dourada */
+  z-index: 3;                        /* acima da borda */
   width: 220px;
   max-width: 45%;
   height: auto;
@@ -77,14 +78,13 @@ body{
   user-select: none;
 }
 
-/* posições */
 .canto-sup-esq{ top: -10px; left: -10px; }
 .canto-sup-dir{ top: -10px; right: -10px; }
 .canto-inf-esq{ bottom: -10px; left: -10px; }
 .canto-inf-dir{ bottom: -10px; right: -10px; }
 
 /* =========================
-   CONTEÚDO NA FRENTE
+   CONTEÚDO (POR CIMA DE TUDO)
 ========================= */
 .topo-floral,
 .convite,
@@ -105,7 +105,7 @@ footer{
 
 .monograma-img{
   width: 92px;
-  max-width: 92px;            /* trava */
+  max-width: 92px;
   height: auto;
   margin-top: 6px;
 }
@@ -120,16 +120,16 @@ footer{
 }
 
 .convite h1{
-  font-family:"Great Vibes", cursive;
+  font-family: "Great Vibes", cursive;
   font-size: 4.4rem;
   font-weight: 400;
   letter-spacing: 2px;
   margin: .45em 0 .25em;
-  color: var(--texto);
+  color: var(--texto);              /* preto */
 }
 
 .subtitulo{
-  font-family:"Cormorant Garamond", serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 16px;
   letter-spacing: .08em;
   line-height: 1.6;
@@ -139,7 +139,7 @@ footer{
 }
 
 .data{
-  font-family:"Cormorant Garamond", serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1.18em;
   font-weight: 500;
   letter-spacing: .12em;
@@ -148,7 +148,7 @@ footer{
 }
 
 .local{
-  font-family:"Cormorant Garamond", serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 14px;
   letter-spacing: .08em;
   line-height: 1.65;
@@ -156,9 +156,11 @@ footer{
   color: var(--texto);
 }
 
-/* Versículo */
+/* =========================
+   VERSÍCULO
+========================= */
 .versículo{
-  font-family:"Cormorant Garamond", serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 14px;
   letter-spacing: .06em;
   line-height: 1.65;
@@ -166,10 +168,14 @@ footer{
   color: var(--texto);
 }
 
-.texto-versiculo{ display:block; font-style: italic; }
+.texto-versiculo{
+  display: block;
+  font-style: italic;
+  color: var(--texto);
+}
 
 .referencia{
-  display:block;
+  display: block;
   margin-top: 8px;
   text-align: right;
   font-size: 13px;
@@ -180,33 +186,35 @@ footer{
    CONTAGEM
 ========================= */
 .countdown .timer{
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
   gap: 24px;
   margin-bottom: 46px;
 }
 
 .timer span{
-  display:block;
+  display: block;
   font-size: 28px;
   font-weight: 300;
   color: var(--texto);
 }
 
-.timer small{ color: var(--texto); }
+.timer small{
+  color: var(--texto);
+}
 
 /* =========================
    RSVP
 ========================= */
 .flor-rsvp{
   width: 110px;
-  max-width: 110px;          /* trava contra “explodir” */
+  max-width: 110px;
   height: auto;
   margin: 22px auto 16px;
 }
 
 .rsvp h2{
-  font-family:"Cormorant Garamond", serif;
+  font-family: "Cormorant Garamond", serif;
   font-weight: 500;
   letter-spacing: .1em;
   margin-bottom: 18px;
@@ -214,14 +222,16 @@ footer{
 }
 
 .rsvp form{
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
 }
 
-/* Textos e campos */
-.rsvp input, .rsvp label, .rsvp p, .rsvp small{
-  font-family:"Cormorant Garamond", serif;
+.rsvp input,
+.rsvp label,
+.rsvp p,
+.rsvp small{
+  font-family: "Cormorant Garamond", serif;
   letter-spacing: .05em;
   color: var(--texto);
 }
@@ -234,15 +244,17 @@ footer{
 .rsvp button{
   padding: 12px;
   background: var(--rosa);
-  color:#fff;
-  border:none;
-  cursor:pointer;
-  font-family:"Cormorant Garamond", serif;
+  color: #fff;                     /* botão branco */
+  border: none;
+  cursor: pointer;
+  font-family: "Cormorant Garamond", serif;
   font-weight: 500;
   letter-spacing: .12em;
 }
 
-.rsvp button:hover{ background: var(--rosa-hover); }
+.rsvp button:hover{
+  background: var(--rosa-hover);
+}
 
 /* =========================
    RODAPÉ
