@@ -62,11 +62,14 @@ body {
   padding: 60px 20px;
 }
 
-h1 {
-  font-family: 'Allura', cursive;
-  font-size: 64px;
-  margin-bottom: 20px;
+  h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4.5rem;      /* ajuste fino */
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 0.5em 0;
 }
+
 
 /* Subtítulo em uma linha */
 .subtitulo {
