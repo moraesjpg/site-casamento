@@ -10,10 +10,17 @@
 /* =========================
    BASE
 ========================= */
+:root{
+  --cor-texto: #5a3a3a;
+  --bg: #fafafa;
+  --rosa: #a14b6a;
+  --rosa-hover: #8f4b5a;
+}
+
 body {
-  font-family: 'Lato', sans-serif;
-  background: #fafafa;
-  color: #5a3a3a;
+  font-family: "Lato", sans-serif;
+  background: var(--bg);
+  color: var(--cor-texto);
   text-align: center;
 }
 
@@ -34,23 +41,20 @@ body {
   max-width: 45%;
 }
 
-.floral.esquerda {
-  left: 0;
-}
+.floral.esquerda { left: 0; }
+.floral.direita  { right: 0; }
 
-.floral.direita {
-  right: 0;
-}
-
+/* ✅ Monograma em Cormorant Garamond */
 .monograma {
   position: absolute;
   top: 160px;
   left: 50%;
   transform: translateX(-50%);
- font-family: 'Great Vibes', cursive;
-  font-size: 3rem;
-  letter-spacing: 4px;
-  color: #5a3a3a;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  letter-spacing: 0.25em;
+  color: var(--cor-texto);
 }
 
 /* =========================
@@ -62,29 +66,41 @@ body {
   padding: 60px 20px;
 }
 
-  h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 4.5rem;      /* ajuste fino */
+/* ✅ Nome do casal em Great Vibes */
+.convite h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 4.5rem;
   font-weight: 400;
   letter-spacing: 2px;
   margin: 0.5em 0;
 }
 
-
-/* Subtítulo em uma linha */
+/* ✅ Subtítulo em Cormorant Garamond */
 .subtitulo {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  letter-spacing: 0.08em;
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 30px;
   white-space: nowrap;
 }
 
+/* ✅ Data em Cormorant Garamond (um pouco maior) */
 .data {
-  font-size: 18px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  font-size: 1.15em; /* maiorzinho como você pediu */
   margin-bottom: 20px;
 }
 
+/* ✅ Local em Cormorant Garamond */
 .local {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
   font-size: 14px;
   margin-bottom: 50px;
 }
@@ -92,15 +108,19 @@ body {
 /* =========================
    VERSÍCULO
 ========================= */
+/* ✅ Versículo inteiro em Cormorant Garamond */
 .versículo {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  letter-spacing: 0.06em;
   font-size: 14px;
+  line-height: 1.6;
   margin-bottom: 60px;
 }
 
 .texto-versiculo {
   display: block;
   font-style: italic;
-  line-height: 1.6;
 }
 
 .referencia {
@@ -142,19 +162,18 @@ body {
   display: inline-block;
   margin-top: 15px;
   padding: 12px 22px;
-  background-color: #a85c6d; /* tom elegante */
+  background-color: #a85c6d;
   color: #fff;
   text-decoration: none;
   border-radius: 30px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 14px;
   transition: background 0.3s ease;
 }
 
 .btn-mapa:hover {
-  background-color: #8f4b5a;
+  background-color: var(--rosa-hover);
 }
-
 
 /* =========================
    PRESENTES
@@ -170,7 +189,7 @@ body {
 .presentes .links a {
   margin: 0 12px;
   text-decoration: none;
-  color: #a14b6a;
+  color: var(--rosa);
 }
 
 /* =========================
@@ -183,8 +202,11 @@ body {
   max-width: 100%;
 }
 
+/* ✅ "Confirme sua presença" em Cormorant Garamond */
 .rsvp h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   margin-bottom: 20px;
 }
 
@@ -194,15 +216,16 @@ body {
   gap: 12px;
 }
 
+/* Formulário continua em Lato (melhor leitura) */
 .rsvp input,
 .rsvp button {
   padding: 10px;
   border: 1px solid #ddd;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .rsvp button {
-  background: #a14b6a;
+  background: var(--rosa);
   color: #fff;
   border: none;
   cursor: pointer;
@@ -231,10 +254,10 @@ footer {
 
   .monograma {
     top: 120px;
-    font-size: 26px;
+    font-size: 1.1rem;
   }
 
-  h1 {
+  .convite h1 {
     font-size: 52px;
   }
 
